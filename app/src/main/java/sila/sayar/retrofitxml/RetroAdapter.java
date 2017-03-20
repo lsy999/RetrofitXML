@@ -25,7 +25,6 @@ public class RetroAdapter extends RecyclerView.Adapter<RetroAdapter.PostViewHold
     public static class PostViewHolder extends RecyclerView.ViewHolder {
         LinearLayout postsLayout;
         TextView movieTitle;
-        TextView data;
         TextView movieDescription;
         TextView rating;
 
@@ -34,7 +33,6 @@ public class RetroAdapter extends RecyclerView.Adapter<RetroAdapter.PostViewHold
             super(v);
             postsLayout = (LinearLayout) v.findViewById(R.id.posts_layout);
             movieTitle = (TextView) v.findViewById(R.id.title);
-            data = (TextView) v.findViewById(R.id.subtitle);
             movieDescription = (TextView) v.findViewById(R.id.description);
             rating = (TextView) v.findViewById(R.id.rating);
         }
@@ -56,7 +54,6 @@ public class RetroAdapter extends RecyclerView.Adapter<RetroAdapter.PostViewHold
     @Override
     public void onBindViewHolder(PostViewHolder holder, final int position) {
         holder.movieTitle.setText(posts.get(position).getTitle());
-        holder.data.setText(posts.get(position).getAuthor());
         holder.movieDescription.setText(posts.get(position).getLink());
         holder.rating.setText("8.1");
     }
